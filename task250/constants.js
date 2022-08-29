@@ -10,4 +10,6 @@ export const config = {
     { id: 3, title: 'Professional', cost: 1200, growthRate: 1.14, baseProduction: 9, count: 0 },
   ],
   productionRate: 0,
+  isInitCompleted: false,
+  isProducerListUpdated: true,
 }
