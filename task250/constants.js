@@ -9,4 +9,5 @@ export const config = {
     { id: 2, title: 'Adventurer', cost: 100, growthRate: 1.17, baseProduction: 1, count: 0 },
     { id: 3, title: 'Professional', cost: 1200, growthRate: 1.14, baseProduction: 9, count: 0 },
   ],
+  productionRate: 0,
 }
