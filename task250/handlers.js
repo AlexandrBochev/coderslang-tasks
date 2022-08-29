@@ -1,4 +1,4 @@
-import { updateGold } from './functions.js';
+import { updateGold, checkInitCompleted } from './functions.js';
 
 export const handleKeyPress = (term, state) => {
   return function gameTable(name, matches, data) {
@@ -17,6 +17,18 @@ export const handleKeyPress = (term, state) => {
         }
       }
     }
+
+    let minCost = 0;
+
+		for (const producer of state.producers) {
+			if (minCost === 0 || minCost > producer.cost) {
+				minCost = producer.cost;
+			}
+		}
+
+    if (state.gold >= minCost && !state.isInitCompleted) {
+			checkInitCompleted(term, state);
+		}
 
   }
 }
