@@ -1,4 +1,4 @@
-import { updateGold, checkInitCompleted, updateProducerList } from './functions.js';
+import { updateGold, checkInitCompleted, updateProducerList, } from './functions.js';
 
 export const handleKeyPress = (term, state) => {
   return function gameTable(name, matches, data) {
@@ -14,6 +14,7 @@ export const handleKeyPress = (term, state) => {
           state.producers[i].count++;
           const productionRate = (state.producers[i].baseProduction / 1000) * state.tickSpeed;
           state.productionRate += productionRate;
+          term.green(state.productionRate);
         }
       }
     }
@@ -39,4 +40,4 @@ export const handleKeyPress = (term, state) => {
 
 export const handleStateChange = (term, state) => () => {
   updateGold(term, state);
- }
+}

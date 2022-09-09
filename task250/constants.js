@@ -12,4 +12,5 @@ export const config = {
   productionRate: 0,
   isInitCompleted: false,
   isProducerListUpdated: true,
+  tickSpeed: 100,
 }
