@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My teachers</title>
+  </head>
+  <body>
+    <h2>My teachers</h2>
+    <div class="section">
+      <img src="https://learn.coderslang.com/avatar Fei.svg" alt="Fei">
+      <img src="https://learn.coderslang.com/avatar Sigma.svg" title="Mrs Sigma" alt="Sigma">
+      <img src="https://learn.coderslang.com/avatar Professor.svg" title="Mr Professor" alt="Professor">
+      <img src="https://learn.coderslang.com/avatar Technic.svg" alt="Technic">
+    </div>
+    <script>
+      const image = document.querySelectorAll('img');
+
+      for (let i = 0; i < image.length; i++) {
+        if (!image[i].hasAttribute('title')) {
+          let alt = image[i].getAttribute('alt');
+          image[i].setAttribute('title', alt)
+        }
+      }
+   
+      console.log(image)
+    </script>
+  </body>
+</html>
