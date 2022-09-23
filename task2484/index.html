@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hidden numbers</title>
+  </head>
+  <body>
+    <p></p>
+    <button>Show next number</button>
+    <script>
+      const numbers = [1, 2, 3, 4, 5];
+      const paragraph = document.querySelector('p');
+      const btn = document.querySelector('button');
+      let currentIndex = 0;
+      paragraph.innerHTML = numbers[currentIndex];
+
+      function addNum() {
+        if (currentIndex < numbers.length -1) {
+          currentIndex++;
+          paragraph.innerHTML += ', ' + numbers[currentIndex];
+        } else {
+          btn.removeEventListener('click', addNum);
+        }
+      }
+
+      btn.addEventListener('click', addNum);
+    </script>
+  </body>
+</html>

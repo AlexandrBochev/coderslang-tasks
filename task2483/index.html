@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter</title>
+    <style>
+      p, button {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p></p>
+    <button>-</button>
+    <button>+</button>
+    <script>
+
+      const counter = document.querySelector('p');
+      const btn = document.querySelectorAll('button');
+
+      let result = 0;
+      counter.innerHTML = result;
+      
+      function minus() { 
+        result--;
+        counter.innerHTML = result;
+      }
+
+      function plus() {
+        result++;
+        counter.innerHTML = result;
+      }
+
+      btn[0].addEventListener('click', minus);
+      btn[1].addEventListener('click', plus);
+
+    </script>
+  </body>
+</html>
