@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My blog</title>
+    <style>
+      textarea {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="blog">
+      <label for="post">Create blog post</label>
+      <textarea name="post" id="post" cols="30" rows="10"></textarea>
+    </form>
+    <script>
+      const form = document.forms.blog;
+      form.addEventListener('focus', () => {
+        console.log('form focused');
+      }, true);
+      const textarea = form.elements.post;
+      textarea.addEventListener('focus', () => {
+        console.log('textarea focused');
+      });
+    </script>
+  </body>
+</html>
