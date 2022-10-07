@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traffic light</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        place-items: center;
+      }
+      .traffic-light {
+        width: 200px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #464655;
+      }
+      .light {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+      }
+      .togglers {
+        height: 400px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+      }
+      .toggler {
+        margin-bottom: 8px;
+      }
+      .red-light {
+        background-color: #794442;
+      }
+      .green-light {
+        background-color: #82926b;
+      }
+      .traffic-light.stop .red-light{
+        background-color: #DB3A34;
+      }
+      .traffic-light.go .green-light{
+        background-color: #ADE25D;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="traffic-light stop">
+        <div class="light red-light"></div>
+        <div class="light green-light"></div>
+      </div>
+      <div class="traffic-light go">
+        <div class="light red-light"></div>
+        <div class="light green-light"></div>
+      </div>
+      <div class="togglers">
+        <button class="toggler" id="toggle-first">Toggle first</button>
+        <button class="toggler" id="toggle-second">Toggle second</button>
+        <button class="toggler" id="toggle-both-go">Toggle both on go</button>
+        <button class="toggler" id="toggle-both-stop">Toggle both on stop</button>
+      </div>
+      <script>
+        const toggleFirst = document.getElementById('toggle-first');
+        const toggleSecond = document.getElementById('toggle-second');
+        const toggleBothGo = document.getElementById('toggle-both-go');
+        const toggleBothStop = document.getElementById('toggle-both-stop');
+
+        toggleFirst.addEventListener('click', () => {
+          const trafficLight = document.querySelectorAll('.traffic-light');
+          if (trafficLight[0].classList.contains('go')) {
+            trafficLight[0].classList.remove('go');
+            trafficLight[0].classList.add('stop')
+          } else {
+            trafficLight[0].classList.remove('stop');
+            trafficLight[0].classList.add('go')
+          }
+        });
+        toggleSecond.addEventListener('click', () => {
+          const trafficLight = document.querySelectorAll('.traffic-light');
+          if (trafficLight[1].classList.contains('go')) {
+            trafficLight[1].classList.remove('go');
+            trafficLight[1].classList.add('stop');
+          } else {
+            trafficLight[1].classList.remove('stop');
+            trafficLight[1].classList.add('go');
+          }
+        });
+        toggleBothGo.addEventListener('click', () => {
+          const trafficLight = document.querySelectorAll('.traffic-light');
+          for (let i = 0; i < trafficLight.length; i++) {
+            if (trafficLight[i].classList.contains('stop')) {
+              trafficLight[i].classList.remove('stop');
+              trafficLight[i].classList.add('go');
+            }
+          }
+        });
+        toggleBothStop.addEventListener('click', () => {
+          const trafficLight = document.querySelectorAll('.traffic-light');
+          for (let i = 0; i < trafficLight.length; i++) {
+            if (trafficLight[i].classList.contains('go')) {
+              trafficLight[i].classList.remove('go');
+              trafficLight[i].classList.add('stop');
+            }
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

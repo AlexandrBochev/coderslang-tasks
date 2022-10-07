@@ -1,13 +1,87 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Script</title>
+    <title>Login</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    <p>Check the console</p>
-    <script>
-      alert('Alert message')
-      
-    </script>
+    <form name="login-form">
+      <label for="email-input">Email</label>
+      <input id="email-input" name="email" value="example@gmail.com" placeholder="Enter email here">
+      <br>
+      <label for="password-input">Password</label>
+      <input id="password-input" name="password" type="password" placeholder="Enter password here">
+      <br>
+      <div>
+        <input id="male" type="radio" checked name="gender">
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input id="female" type="radio" name="gender">
+        <label for="female">Female</label>
+      </div>
+      <div>
+        <input id="other" checked type="radio" name="gender">
+        <label for="other">Other</label>
+      </div>
+      <br>
+      <label for="start">Start date</label>
+      <input
+        type="date"
+        id="start"
+        name="project-start"
+        value="2021-07-22"
+        min="2021-01-01"
+        max="2022-12-31"
+      >
+      <br>
+      <div>
+        <input type="checkbox" checked name="remember" id="remember-input">
+        <label for="remember-input">Remember me</label>
+      </div>
+    </form>
+    <br>
+    <form name="user-form">
+      <label for="user-name">User name</label>
+      <input name="name" id="user-name" placeholder="Enter name">
+      <br>
+      <fieldset>
+        <legend>Gender</legend>
+        <div>
+          <input id="male" type="radio" checked name="gender">
+          <label for="male">Male</label>
+        </div>
+        <div>
+          <input id="female" type="radio" name="gender">
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <input id="other" type="radio" name="gender">
+          <label for="other">Other</label>
+        </div>
+      </fieldset>
+    </form>
+    <br>
+    <form name="comment-form">
+      <label for="comment">Leave your comment</label>
+      <textarea id="comment" name="comment" rows="6" cols="50">I love your product because ...</textarea>
+    </form>
+    <br>
+    <form name="countries-form">
+      <label for="countries">Countries</label>
+      <select multiple id="countries">
+        <option value="">-- Select country --</option>
+        <option value="Australia">Australia</option>
+        <option value="USA" selected>USA</option>
+        <option value="Canada">Canada</option>
+      </select>
+    </form>
   </body>
 </html>

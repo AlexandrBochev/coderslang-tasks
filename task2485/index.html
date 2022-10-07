@@ -6,18 +6,24 @@
   <body>
     <p></p>
     <script>
-
-
-
-      document.addEventListener('keydown', (event) => {
-        const p = document.createElement('p');
-        
-        if (event.key === 'Enter') {
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const p = document.createElement('p');
           document.body.append(p);
         }
-        p.innerHTML += event.key;
+        if (e.key.length === 1) {
+          const par = document.querySelectorAll('p')
+          const lastP = par[par.length-1]
+          lastP.innerHTML = lastP.innerHTML + e.key;
+        }
+        if (e.key === 'Backspace') {
+          const par = document.querySelectorAll('p')
+          const lastP = par[par.length-1]
+          lastP.innerHTML = lastP.innerHTML.slice(0, -1)
+        }
       });
-
+      
     </script>
   </body>
 </html>

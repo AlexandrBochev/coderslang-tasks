@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div id="parent-1">
+      <div id="parent-2">
+        <div id="parent-3">
+          <button id="click-target">Click me</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector('button');
+      btn.addEventListener('click', () => console.log(btn.id));
+      const block1 = document.getElementById('parent-1');
+      block1.addEventListener('click', () => console.log(block1.id), { capture: true });
+      const block2 = document.getElementById('parent-2');
+      block2.addEventListener('click', () => console.log(block2.id), { capture: true });
+      const block3 = document.getElementById('parent-3');
+      block3.addEventListener('click', () => console.log(block3.id), { capture: true });
+    </script>
+  </body>
+</html>
+
+<!-- , { capture: true } -->
