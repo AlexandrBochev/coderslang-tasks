@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Submit</title>
+    <title>Transform</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+      .container, .element, .substrate  {
+        width: 100px;
+        height: 100px;
+        border-radius: 3px;
+      }
+      .container, .element {
+        position: relative;
+      }
+      .container + .container {
+        margin-left: 64px;
+      }
+      .substrate {
+        position: absolute;
+        background-color: #DBE4EE;
+        border: 2px dashed #81A4CD;
+        box-sizing: border-box;
+      }
+      .element.one {
+        background-color: #EFCA08;
+        transform: perspective(200px) translateZ(50px);
+      }
+      .element.two {
+        background-color: #F08700;
+        transform: perspective(200px) translateZ(-50px);
+      }
+      .element.three {
+        background-color: #FF4F79;
+        transform: perspective(200px) rotateX(45deg) translateZ(-100%);
+        transform-origin: 0 0;
+      }
+    </style>
   </head>
   <body>
-    <form name="search" action="https://www.google.com/search">
-      <label for="query">Search query</label>
-      <input name="q" id="query">
-      <button>Search at <b>Google</b></button>
-    </form>
+    <div class="container">
+      <div class="substrate"></div>
+      <div class="element one"></div>
+    </div>
+    <div class="container">
+      <div class="substrate"></div>
+      <div class="element two"></div>
+    </div>
+      <div class="container">
+      <div class="substrate"></div>
+      <div class="element three"></div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rotate</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #9CFC97;
+            position: relative;
+        }
+        button {
+            margin: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="left" class="rotate-left">-30 deg</button>
+    <div class="box"></div>
+    <button id="right" class="rotate-right">+30 deg</button>
+    <script>
+      const rotateLeft = document.getElementById('left');
+      const rotateRight = document.getElementById('right');
+      const box = document.querySelector('.box');
+      
+      box.style.transform = 'rotate(0deg)';
+      const rotate = box.style.transform;
+      let deg = parseInt(rotate.match(/\d+/));
+      
+      rotateLeft.addEventListener('click', () => {
+        deg += - 30;
+        box.style.transform = `rotate(${deg}deg)`;
+      });
+      rotateRight.addEventListener('click', () => {
+        deg += 30;
+        box.style.transform = `rotate(${deg}deg)`;
+      });
+
+      
+    </script>
+  </body>
+</html>
