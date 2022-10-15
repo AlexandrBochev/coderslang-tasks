@@ -41,6 +41,9 @@ h1 {
 .opened .card-inner {
   transform: rotateY(180deg);
 }
+.match {
+  transform: rotateY(180deg);
+}
 .card-front, .card-back {
   position: absolute;
   backface-visibility: hidden;

@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "chalk": "^5.0.1",
-    "express": "^4.18.1",
-    "progressbar.js": "^1.1.0",
-    "readline-sync": "^1.4.10"
-  }
-}
