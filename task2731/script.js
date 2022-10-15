@@ -32,9 +32,10 @@ function logic() {
         opened = [];
       }, 1000);
     } else {
-      opened[0].classList.add('opened');
-      opened[1].classList.add('opened');
+      opened[0].classList.add('match');
+      opened[1].classList.add('match');
       opened = [];
+      matched += 2;
     }
   }
 }
@@ -53,11 +54,17 @@ function init() {
       if (opened.length !== 2) {
         card.classList.add('opened');
         opened.push(card);
-        addMove()
-        logic()
+        addMove();
+        logic();
       }
-    }); 
+      if (matched === 16) {
+        showModal();
+      }
+    });
+    card.classList.remove('match');
   });
+
+  
 
   shuffled = shuffle([...cards]);
   for (let i = 0; i < shuffled.length; i++) {
